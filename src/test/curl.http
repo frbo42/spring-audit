@@ -1,0 +1,15 @@
+###
+
+# curl -d 'me' http://localhost:8080
+POST http://localhost:8080
+Content-Type: text/plain
+
+my value
+
+###
+
+# curl http://localhost:8080
+GET http://localhost:8080
+
+###
+
