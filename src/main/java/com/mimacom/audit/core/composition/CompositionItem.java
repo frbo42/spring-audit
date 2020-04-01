@@ -16,8 +16,8 @@ import java.util.UUID;
 @Setter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 
-@Entity
 @EntityListeners(AuditingEntityListener.class)
+@Entity
 public class CompositionItem {
 
     @Id
