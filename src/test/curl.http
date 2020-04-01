@@ -1,15 +1,34 @@
 ###
 
-# curl -d 'me' http://localhost:8080
-POST http://localhost:8080
+POST http://localhost:8080/sub
 Content-Type: text/plain
 
 my value
 
 ###
 
-# curl http://localhost:8080
-GET http://localhost:8080
+GET http://localhost:8080/sub
 
 ###
 
+###
+
+POST http://localhost:8080/del
+Content-Type: text/plain
+
+my value
+
+###
+
+GET http://localhost:8080/del
+
+###
+
+###
+
+PATCH http://localhost:8080/del/4eb04410-3d16-4c39-8a18-5a3371c0d1e6
+Content-Type: text/plain
+
+my new value
+
+###

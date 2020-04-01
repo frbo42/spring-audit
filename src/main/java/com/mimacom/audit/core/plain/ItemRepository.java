@@ -1,4 +1,4 @@
-package com.mimacom.audit.core;
+package com.mimacom.audit.core.plain;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
