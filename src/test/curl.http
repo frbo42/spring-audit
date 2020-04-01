@@ -13,20 +13,20 @@ GET http://localhost:8080/sub
 
 ###
 
-POST http://localhost:8080/del
+POST http://localhost:8080/composition
 Content-Type: text/plain
 
 my value
 
 ###
 
-GET http://localhost:8080/del
+GET http://localhost:8080/composition
 
 ###
 
 ###
 
-PATCH http://localhost:8080/del/4eb04410-3d16-4c39-8a18-5a3371c0d1e6
+PATCH http://localhost:8080/composition/4f5e669b-fe7d-4543-ae97-2d8b900ad3de
 Content-Type: text/plain
 
 my new value

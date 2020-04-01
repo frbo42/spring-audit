@@ -1,4 +1,4 @@
-package com.mimacom.audit.core.delegate;
+package com.mimacom.audit.core.composition;
 
 import lombok.Getter;
 import org.springframework.data.annotation.AccessType;

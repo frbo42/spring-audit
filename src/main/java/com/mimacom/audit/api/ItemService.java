@@ -1,7 +1,7 @@
 package com.mimacom.audit.api;
 
-import com.mimacom.audit.core.delegate.DelItem;
-import com.mimacom.audit.core.delegate.DelegateItemRepository;
+import com.mimacom.audit.core.composition.CompositionItem;
+import com.mimacom.audit.core.composition.CompositionItemRepository;
 import com.mimacom.audit.core.hierachy.HierarchyItem;
 import com.mimacom.audit.core.hierachy.HierarchyItemRepository;
 import com.mimacom.audit.core.plain.Item;
@@ -17,12 +17,12 @@ import java.util.Optional;
 public class ItemService {
     final ItemRepository itemRepository;
     final HierarchyItemRepository hierarchyItemRepository;
-    final DelegateItemRepository delegateItemRepository;
+    final CompositionItemRepository compositionItemRepository;
 
-    public ItemService(ItemRepository itemRepository, HierarchyItemRepository hierarchyItemRepository, DelegateItemRepository delegateItemRepository) {
+    public ItemService(ItemRepository itemRepository, HierarchyItemRepository hierarchyItemRepository, CompositionItemRepository compositionItemRepository) {
         this.itemRepository = itemRepository;
         this.hierarchyItemRepository = hierarchyItemRepository;
-        this.delegateItemRepository = delegateItemRepository;
+        this.compositionItemRepository = compositionItemRepository;
     }
 
     public void createPlain(String value) {
@@ -41,16 +41,16 @@ public class ItemService {
         return hierarchyItemRepository.findAll();
     }
 
-    public String createDel(String value) {
-        return delegateItemRepository.save(new DelItem(value)).getId();
+    public String createComposition(String value) {
+        return compositionItemRepository.save(new CompositionItem(value)).getId();
     }
 
-    public List<DelItem> dels() {
-        return delegateItemRepository.findAll();
+    public List<CompositionItem> compositions() {
+        return compositionItemRepository.findAll();
     }
 
-    public void updateDel(String id, String value) {
-        Optional<DelItem> byId = delegateItemRepository.findById(id);
+    public void updateComposition(String id, String value) {
+        Optional<CompositionItem> byId = compositionItemRepository.findById(id);
         byId.ifPresent(item -> item.setValue(value));
     }
 }

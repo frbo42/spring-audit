@@ -1,4 +1,4 @@
-package com.mimacom.audit.core.delegate;
+package com.mimacom.audit.core.composition;
 
 import lombok.AccessLevel;
 import lombok.Getter;
@@ -18,7 +18,7 @@ import java.util.UUID;
 
 @Entity
 @EntityListeners(AuditingEntityListener.class)
-public class DelItem {
+public class CompositionItem {
 
     @Id
     String id = UUID.randomUUID().toString();
@@ -28,7 +28,7 @@ public class DelItem {
 
     String value;
 
-    public DelItem(String value) {
+    public CompositionItem(String value) {
         this.value = value;
     }
 }

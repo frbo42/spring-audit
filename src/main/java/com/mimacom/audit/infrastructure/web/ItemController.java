@@ -1,7 +1,7 @@
 package com.mimacom.audit.infrastructure.web;
 
 import com.mimacom.audit.api.ItemService;
-import com.mimacom.audit.core.delegate.DelItem;
+import com.mimacom.audit.core.composition.CompositionItem;
 import com.mimacom.audit.core.hierachy.HierarchyItem;
 import com.mimacom.audit.core.plain.Item;
 import org.springframework.http.MediaType;
@@ -44,18 +44,18 @@ public class ItemController {
     }
 
 
-    @PostMapping(value = "/del", consumes = MediaType.TEXT_PLAIN_VALUE)
+    @PostMapping(value = "/composition", consumes = MediaType.TEXT_PLAIN_VALUE)
     public String createDel(@RequestBody String value) {
-        return service.createDel(value);
+        return service.createComposition(value);
     }
 
-    @GetMapping(value = "/del")
-    public List<DelItem> dels() {
-        return service.dels();
+    @GetMapping(value = "/composition")
+    public List<CompositionItem> dels() {
+        return service.compositions();
     }
 
-    @PatchMapping(value = "/del/{id}")
+    @PatchMapping(value = "/composition/{id}")
     public void updateDel(@PathVariable("id") String id, @RequestBody String value) {
-        service.updateDel(id, value);
+        service.updateComposition(id, value);
     }
 }
