@@ -11,8 +11,9 @@ import javax.persistence.EntityListeners;
 import javax.persistence.MappedSuperclass;
 import java.time.ZonedDateTime;
 
-@EntityListeners(AuditingEntityListener.class)
 @Getter
+
+@EntityListeners(AuditingEntityListener.class)
 @MappedSuperclass
 public class Audit {
     @CreatedBy
